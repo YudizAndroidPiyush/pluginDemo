@@ -1,10 +1,11 @@
 package com.example.plugindemo
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import androidx.activity.ComponentActivity
 import com.example.mylibrary.MyActivity
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,7 +13,8 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.main_activity)
 
         findViewById<Button>(R.id.clickButton).setOnClickListener {
-            Log.d("TAG", "onCreate: HEREHREHEHREHR")
+            val myIntent = Intent(this, MyActivity::class.java)
+            startActivity(myIntent)
         }
     }
 }
